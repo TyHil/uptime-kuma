@@ -12,9 +12,11 @@ Uptime Kuma setup and monitor instructions
 
 ## Monitor
 
-1. Configure Docker monitors for each container.
+1. Set up Discord notifications.
 
-2. Configure local and external HTTPS monitors for websites.
+2. Configure Docker monitors for each container.
 
-3. Configure push monitors for scheduled scripts (see https://github.com/TyHil/immich).
+3. Configure local and external HTTPS monitors for websites.
+
+4. Configure push monitors for scheduled scripts (see https://github.com/TyHil/immich).
 
