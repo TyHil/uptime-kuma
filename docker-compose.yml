@@ -13,7 +13,6 @@ services:
       - UMASK=0022  # Set your file permissions manually
     networks:
       - kuma_network  # add your own custom network config
-      - immich_default
     healthcheck:
       test: ["CMD", "curl", "-f", "http://localhost:3001"]
       interval: 30s
@@ -29,6 +28,4 @@ services:
 networks:
   kuma_network:
     driver: bridge
-  immich_default:
-    external: true
 

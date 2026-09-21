@@ -1,0 +1,9 @@
+services:
+  uptime-kuma:
+    networks:
+      - immich_default
+
+networks:
+  immich_default:
+    external: true
+

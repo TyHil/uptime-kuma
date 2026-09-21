@@ -6,6 +6,8 @@ Uptime Kuma setup and monitor instructions
 
 1. Clone the repo with `git clone https://github.com/TyHil/uptime-kuma.git ~/uptime-kuma` and `cd ~/uptime-kuma`.
 
+1. If running alongside Immich run `cp .env.example .env` to enable the extra `docker-compose.immich.yml` file.
+
 1. Run `docker compose up -d`.
 
 1. Follow instructions at http://localhost:3001/dashboard.
