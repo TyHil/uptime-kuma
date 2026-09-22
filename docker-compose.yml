@@ -28,4 +28,3 @@ services:
 networks:
   kuma_network:
     driver: bridge
-

@@ -6,4 +6,3 @@ services:
 networks:
   immich_default:
     external: true
-

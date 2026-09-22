@@ -22,3 +22,8 @@ Uptime Kuma setup and monitor instructions
 
 1. Configure push monitors for scheduled scripts (see https://github.com/TyHil/immich).
 
+1. Configure scheduled storage checking scripts
+
+    a. Run `cp .env.storage.example .env.storage.os` (optionally also `cp .env.storage.example .env.storage.drive` to monitor another drive) and set your mount point and push URL in the new file.
+    
+    a. Run `crontab -e` and add an entry for `0 5 * * * /home/tyler-hill/uptime-kuma/check-storage.sh /home/tyler-hill/uptime-kuma/.env.storage.os >> /home/tyler-hill/uptime-kuma/check-storage-os.log 2>&1` (optionally also `0 5 * * * /home/tyler-hill/uptime-kuma/check-storage.sh /home/tyler-hill/uptime-kuma/.env.storage.drive >> /home/tyler-hill/uptime-kuma/check-storage-drive.log 2>&1`) with updated paths.

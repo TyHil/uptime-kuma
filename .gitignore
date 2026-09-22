@@ -1,3 +1,9 @@
-.env
+# Uptime Kuma
 data
 
+# Storage check
+.env
+.env.storage.os
+.env.storage.drive
+check-storage-os.log
+check-storage-drive.log
