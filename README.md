@@ -27,3 +27,9 @@ Uptime Kuma setup and monitor instructions
     a. Run `cp .env.storage.example .env.storage.os` (optionally also `cp .env.storage.example .env.storage.drive` to monitor another drive) and set your mount point and push URL in the new file.
     
     a. Run `crontab -e` and add an entry for `0 5 * * * /home/tyler-hill/uptime-kuma/check-storage.sh /home/tyler-hill/uptime-kuma/.env.storage.os >> /home/tyler-hill/uptime-kuma/check-storage-os.log 2>&1` (optionally also `0 5 * * * /home/tyler-hill/uptime-kuma/check-storage.sh /home/tyler-hill/uptime-kuma/.env.storage.drive >> /home/tyler-hill/uptime-kuma/check-storage-drive.log 2>&1`) with updated paths. For Immich, which defaults to running nightly tasks at midnight, a database dump at 2am, and integrity checks at 3am, backups can be configured to run at 4am and thus storage checks at 5am.
+
+1. Configure scheduled Tailscale checking script
+
+    a. Run `cp .env.tailscale.example .env.tailscale` and set your remote host and push URL in the new file.
+    
+    a. Run `crontab -e` and add an entry for `*/10 * * * * /home/tyler-hill/uptime-kuma/check-tailscale.sh /home/tyler-hill/uptime-kuma/.env.tailscale >> /home/tyler-hill/uptime-kuma/check-tailscale.log 2>&1` with updated paths.

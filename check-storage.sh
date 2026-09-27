@@ -20,13 +20,14 @@ if [[ -z "${KUMA_PUSH_URL:-}" ]]; then
   exit 1
 fi
 
+# Get disk usage
 USAGE=$(df --output=pcent "$MOUNT" 2>/dev/null | tail -1 | tr -dc '0-9')
-
 if [[ -z "$USAGE" ]]; then
   echo "Could not determine disk usage for $MOUNT" >&2
   exit 1
 fi
 
+# Determine status and message
 if (( USAGE >= THRESHOLD )); then
   KUMA_STATUS="down"
   KUMA_MSG="WARNING: ${MOUNT} usage at ${USAGE}%"
@@ -35,4 +36,5 @@ else
   KUMA_MSG="OK"
 fi
 
+# Send status
 curl -fsS -m 10 --retry 3 -G "$KUMA_PUSH_URL" --data-urlencode "status=${KUMA_STATUS}" --data-urlencode "msg=${KUMA_MSG}" --data-urlencode "ping=${USAGE}" > /dev/null

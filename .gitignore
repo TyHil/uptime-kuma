@@ -1,9 +1,15 @@
 # Uptime Kuma
 data
 
-# Storage check
+# Immich network
 .env
+
+# Storage check
 .env.storage.os
 .env.storage.drive
-check-storage-os.log
-check-storage-drive.log
+
+# Tailscale check
+.env.tailscale
+
+# Logs
+*.log
