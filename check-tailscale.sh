@@ -2,7 +2,7 @@
 set -euo pipefail
 
 # Configuration
-ENV_FILE=".env.tailscale"
+ENV_FILE="${1:?Usage: $0 <path-to-env-file>}"
 
 # Check for and load environment variables
 if [[ ! -f "$ENV_FILE" ]]; then
