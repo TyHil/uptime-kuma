@@ -32,4 +32,4 @@ Uptime Kuma setup and monitor instructions
 
     a. Run `cp .env.tailscale.example .env.tailscale` and set your remote host and push URL in the new file.
     
-    a. Run `crontab -e` and add an entry for `*/10 * * * * /home/tyler-hill/uptime-kuma/check-tailscale.sh /home/tyler-hill/uptime-kuma/.env.tailscale >> /home/tyler-hill/uptime-kuma/check-tailscale.log 2>&1` with updated paths.
+    a. Run `crontab -e` and add an entry for `0 * * * * /home/tyler-hill/uptime-kuma/check-tailscale.sh /home/tyler-hill/uptime-kuma/.env.tailscale >> /home/tyler-hill/uptime-kuma/check-tailscale.log 2>&1` with updated paths.

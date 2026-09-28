@@ -44,7 +44,7 @@ fi
 
 # Perform remote health checks
 if [ "$KUMA_STATUS" = "up" ]; then
-  if ! ping -c 1 -W 2 "$REMOTE_HOST" > /dev/null; then
+  if ! ping -c 1 -w 30 "$REMOTE_HOST" > /dev/null; then
     KUMA_STATUS="down"
     KUMA_MSG="Remote host $REMOTE_HOST unreachable"
   fi
